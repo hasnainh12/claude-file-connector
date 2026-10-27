@@ -1,0 +1,6 @@
+node_modules/
+_claude_backups/
+allowed_folders.json
+active_folder.json
+access_log.jsonl
+.env

@@ -1,0 +1,13 @@
+{
+  "allowedFolders": [
+    "C:\\Users\\YourName\\Documents"
+  ],
+  "writableFolders": [
+    "C:\\Users\\YourName\\Documents"
+  ],
+  "allowWrites": false,
+  "approvalMode": "dialog",
+  "scope": [],
+  "softBudgetTokens": 30000,
+  "hardBudgetTokens": 80000
+}
