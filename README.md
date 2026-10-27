@@ -1,16 +1,26 @@
 # Claude Desktop File Connector
 
-Yeh ek custom MCP (Model Context Protocol) server hai jo Claude Desktop ko aapke local computer ki files securely access karne deta hai.
+A custom MCP (Model Context Protocol) server that allows Claude Desktop to securely access files and folders on your local computer.
 
 ## ✨ Features
-- **Token Optimization:** `project_map`, `outline_file`, aur `read_symbol` ke zariye poori file parhne ke bajaye sirf zaroori hissa parhta hai.
-- **Safety First (Read-Only by Default):** Default mein koi file write/edit nahi hoti. Jab tak aap `config.json` mein `allowWrites: true` na karein.
-- **Native Popup Approval:** Write/Edit karte waqt Windows par asli popup (Yes/No) aata hai.
-- **Security:** `.env`, `id_rsa` jaisi secret files block hain. UNC, ADS, aur symlinks se bacha jata hai.
-- **Deduplication:** Ek dafa parhi hui file ko dobara nahi parhta (agar woh change na hui ho).
+- **Token Optimization:** Uses `project_map`, `outline_file`, and `read_symbol` tools to read only the relevant sections instead of entire files, saving context and tokens.
+- **Safety First (Read-Only by Default):** No files are written or edited by default. You must explicitly set `"allowWrites": true` in `config.json` to enable write access.
+- **Native Popup Approval:** When Claude attempts to write or edit a file, a native Windows popup (Yes/No) appears for manual approval.
+- **Security:** Blocks access to secret files (like `.env`, `id_rsa`). Prevents path traversal attacks using UNC, ADS, and symlinks.
+- **Deduplication:** Prevents reading the same file twice in a session if it hasn't been modified.
 
 ## 🚀 Setup Instructions
-1. Is repository ko clone karein ya ZIP download karein.
-2. Terminal mein is folder mein jayen aur command chalayein:
-   ```bash
-   npm install
+
+### Step 1: Download the Connector
+- Go to the top of this repository page and click the green **"<> Code"** button.
+- Select **"Download ZIP"**.
+- Once downloaded, extract the ZIP file to a folder on your computer (e.g., `C:\claude-file-connector`).
+
+### Step 2: Install Node.js (If not installed)
+Ensure you have Node.js installed. You can download it from [nodejs.org](https://nodejs.org/).
+
+### Step 3: Install Dependencies
+- Open **Command Prompt** or **PowerShell**.
+- Navigate to the folder where you extracted the connector:
+  ```bash
+  cd C:\claude-file-connector
